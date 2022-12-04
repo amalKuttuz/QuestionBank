@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home | {{ block.super }}{% endblock title %}
+
+{% block content %}
+<div class="row mt-3">
+    <div class="col-md-25">
+
+        {% for message in messages %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% endfor %}
+
+        <h2>All Books</h2>
+        <a class="btn btn-info mt-2 mb-2" href="{% url 'add_book' %}" role="button">Upload</a>
+        <table class="table border border-5">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Image</th>
+                    <th scope="col">Paper Name</th>
+                    <th scope="col">Semester</th>
+                    <th scope="col">Course</th>
+                    <th scope="col">University</th>
+                    <th scope="col">Added on</th>
+                    <th scope="col">Added by</th>
+                    <th scope="col">Approval</th>
+                    <th scope="col">Document</th>
+                    <th scope="col">Operations</th>
+
+
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for book in books %}
+                <tr>
+                    <td> <img src="{% static 'pdf.jpg' %}" style="height:100px" alt="Featured Image"></td>
+                    <td>{{ book.papername }}</td>
+                    <td>{{ book.sem }}</td>
+                    <td>{{ book.course }}</td>
+                    <td>{{ book.university }}</td>
+                    <td>{{ book.addedon }}</td>
+                    <td>{{ book.addedby }}</td>
+                    <td>{{ book.approval }}</td>
+                    <td> <a class="btn btn-primary mr-2 mb-3" href="update/{{ book.id}}">Update</a></td>
+
+                    <td class="form-inline">
+                        <a class="btn btn-primary mr-2 mb-3" href="{{ book.pdf.url }}" role="button">Save it</a>
+                        <form action="{% url 'delete_book' book.id %}" method="POST">
+                            {% csrf_token %}
+                            <input type="submit" role="button" class="btn btn-danger" value="Delete" onclick="return confirm('Are You sure to delete {{ book.title }}?')">
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock content %}
