@@ -1,18 +1,19 @@
 {% extends 'theme.html' %}
 {% load crispy_forms_tags %}
-
 {% block title %}Add Materials | {{ block.super }}{% endblock title %}
 {% block content %}
-<div class="container mt-4 border border-5 mb-3 text-center log">
-   
-        <h2>Add new study material</h2>
+<section class="blog_section layout_padding">
+    <h2>Add new Notes</h2>
 
+<div class="container mt-4 border border-5 mb-1 text-left ">
+   
         <form method="POST" enctype="multipart/form-data" >
             {% csrf_token %}
             {{ form|crispy}}
     
-            <input type="submit" class="btn btn-primary mt-1">
+            <input type="submit" class="btn btn-primary mt-2 mb-1">
         
         </form>
 </div>
+</section>
 {% endblock content %}

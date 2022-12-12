@@ -1,20 +1,10 @@
 {% extends 'theme.html' %}
+{% block title %}Login | {{ block.super }}{% endblock title %}
 
 {% block content %}
-<style>
-    body{
-        background-color: #8EC5FC;
-        background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+<section class="blog_section layout_padding">
 
-
-
-    }
-    .cont{
-        transform: translate(0,50%);
-    }
-</style>
-<body>
-    <div class="container text-center border border-4 mt-5 mb-3 ">
+    <div class=" text-center  mt-5 mb-3 ">
       
         <h1 class="text-center text-primary">LOGIN</h1>
         <form method="POST">
@@ -40,5 +30,5 @@
 
 
     </div>
-</body>
+</section>
 {% endblock content %}

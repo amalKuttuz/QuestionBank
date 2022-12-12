@@ -1,6 +1,9 @@
 {% extends 'theme.html' %}
+{% block title %}Logout | {{ block.super }}{% endblock title %}
 
 {% block content %}
+<section class="blog_section layout_padding">
+
     <br>
     <div class="alert alert-success" role="alert">
         <h2 style="text-align: center;">Logged out!</h2>
@@ -9,4 +12,5 @@
     <h3>Login again?</h3>
     <a href="{% url 'login' %}">---> Login</a> <br>
     <a href="{% url 'index' %}"><--- Or go back to home.</a>
+</section>
 {% endblock content %}

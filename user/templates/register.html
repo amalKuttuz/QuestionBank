@@ -1,25 +1,12 @@
 {% extends 'theme.html' %}
-{% load static %}
-    <link rel="stylesheet" href="/css/stylelogin.css">
+{% block title %}Register | {{ block.super }}{% endblock title %}
 
 {% block content %}
-<style>
-    body{
-        background-color: #8EC5FC;
-        background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+<section class="blog_section layout_padding">
 
 
-
-    }
-    .cont{
-        transform: translate(0,50%);
-    }
-</style>
-<body>
-    <div class="container text-center border border-4 mt-3 mb-3 ">
+<div class="container text-center  ">
 <h3>Register here</h3>
-<hr>
-
 <form action="" method="POST">
     {% csrf_token %}
 
@@ -33,7 +20,8 @@
         </div>
     {% endfor %}
     <button type="submit">Register</button>
-    <div class='p mt-1'> Already have account <a href="{% url 'login' %}">Login here</a>
+    <div class='p mt-1'> Already have account? <a href="{% url 'login' %}">Login here</a>
 </form>
-</body>
+</div>
+</section>
 {% endblock %}

@@ -8,6 +8,15 @@ from upload.forms import BookAddForm
 def home(request):
     return render(request, 'index.html')
 
+def contact(request):
+    return render(request, 'contact.html')
+
+def about(request):
+    return render(request, 'about.html')
+
+def blog(request):
+    return render(request, 'blog.html')
+
 def register(request):
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
