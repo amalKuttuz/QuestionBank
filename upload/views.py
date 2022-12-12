@@ -73,3 +73,50 @@ def pdf_view(request,pk):
         response = HttpResponse(pdf.read(), content_type='application/pdf')
         response['Content-Disposition'] = 'inline;filename=mypdf.pdf'
         return response   
+
+# def questionView(request,s):
+#     # pd=Book.objects.values_list('papername','pdf', flat=False).get(course=s)
+   
+#     # return render(request,'result.html',{'pd':pd})
+
+
+# def question(request):
+#     selected_paper = None
+#     selsem=None
+#     selcourse=None
+#     seluni=None
+#     res = Book.objects.all()
+
+    # if request.method == "POST":
+    #     # Filter books by selected criteria, but only on a POST
+    #     selected_paper = request.POST.get("p")
+    #     # selsem = request.POST.get("sem")
+    #     course = request.POST.get("course")
+    #     # seluni = request.POST.get("university")
+    #     # res = Book.filter(papername=selected_paper and selsem=sem and selcourse=course and seluni=university )
+    #     # res = Book.objects.filter(papername=selected_paper,sem=selsem,course=selcourse,university=seluni)
+    #     p=Book.objects.order_by('papername').values_list('papername', flat=True)
+    #     selcourse=Book.objects.filter(coursenam=)
+
+    # # Get a list of all unique pdf (group by paper)  
+    #     # paper = Book.objects.order_by('papername').values_list('pdf', flat=True)
+    #     paper=Book.objects.filter(papername=selected_paper)
+    #     print(paper)
+    # context = {
+
+    #     'paper': paper,
+    #     'res': res,
+    #     'p':p, 
+    #     'selected_paper': selected_paper,
+    #     'selsem':selsem,
+    #     'selcourse':selcourse,
+    #     'seluni':seluni
+        
+    # }
+
+    # return render(request, 'test.html', context)
+
+def question(request):
+    k=Book.objects.order_by('papername')
+    return render(request, 'result.html', {'k':k})
+

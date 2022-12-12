@@ -1,0 +1,47 @@
+<h1>Index</h1>
+<form method="post">
+    {% csrf_token %}
+    <select name="p">
+         {% for p in p %}
+             <option
+              value="{{ p }}"
+              {% if selected_paper == p %}
+                  selected="selected"
+              {% endif %}
+             >{{ p }}</option>
+         {% endfor %}
+    </select>
+
+
+
+    <select name="course">
+        {% for selcourse in selcourse %}
+            <option
+             value="{{ selcourse }}"
+             {% if selected_paper == selcourse %}
+                 selected="selected"
+             {% endif %}
+            >{{ selcourse }}</option>
+        {% endfor %}
+   </select>
+
+
+
+
+
+    <input type="submit" value="Select">
+</form>
+{% if selected_paper %}
+  <p>
+    Nice, you selected: {{ selected_paper }}!
+  </p>
+  <p>
+    Papers available for this subject is:
+  </p>
+  <ul>
+     {% for i in paper %}
+    
+       <li> <a href="/uploadview-pdf/{{i.id}}"> {{ i.papername }} </a> </li>
+     {% endfor %}
+  </ul>
+{% endif %}

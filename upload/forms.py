@@ -1,5 +1,5 @@
 from django import forms
-from .models import Book
+from .models import Book,Booklist
 
 
 class BookAddForm(forms.ModelForm):
@@ -10,4 +10,9 @@ class BookAddForm(forms.ModelForm):
 class Updatebook(forms.ModelForm):
     class Meta:
         model = Book
+        fields = '__all__'
+
+class searchbook(forms.ModelForm):
+    class Meta:
+        model = Booklist
         fields = '__all__'

@@ -20,3 +20,10 @@ class Book(models.Model):
 
     def __str__(self):
         return self.papername
+
+class Booklist(models.Model):
+    pname=models.ForeignKey(Book, on_delete=models.CASCADE)
+    semname=models.ForeignKey(Semesters, on_delete=models.CASCADE,null=True)
+    coursename=models.ForeignKey(Courses, on_delete=models.CASCADE,null=True)
+    universityname=models.ForeignKey(Universities, on_delete=models.CASCADE,null=True)
+ 

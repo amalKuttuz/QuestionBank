@@ -1,0 +1,18 @@
+{% extends 'theme.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Add Materials | {{ block.super }}{% endblock title %}
+{% block content %}
+<div class="container mt-4 border border-5 mb-3 text-center log">
+   
+        <h2>Add new study material</h2>
+
+        <form method="POST" enctype="multipart/form-data" >
+            {% csrf_token %}
+            {{ form|crispy}}
+    
+            <input type="submit" class="btn btn-primary mt-1">
+        
+        </form>
+</div>
+{% endblock content %}

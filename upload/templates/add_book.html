@@ -1,10 +1,9 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
 
-{% block title %}Add Book | {{ block.super }}{% endblock title %}
-
+{% block title %}Add Materials | {{ block.super }}{% endblock title %}
 {% block content %}
-<div class="container mt-4 border border-5 mb-3">
+<div class="container mt-4 border border-5 mb-3 text-center log">
    
         <h2>Add new study material</h2>
 
@@ -12,7 +11,7 @@
             {% csrf_token %}
             {{ form|crispy}}
     
-            <input type="submit" class="btn btn-primary">
+            <input type="submit" class="btn btn-primary mt-1">
         
         </form>
 </div>
