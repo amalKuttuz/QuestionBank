@@ -5,7 +5,7 @@ from .models import Book,Booklist
 class BookAddForm(forms.ModelForm):
     class Meta:
         model = Book
-        fields = ['papername','sem','university', 'course', 'pdf']
+        fields = ['papername','sem','university', 'course', 'pdf','examyear']
 
 class Updatebook(forms.ModelForm):
     class Meta:

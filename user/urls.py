@@ -5,7 +5,7 @@ from upload.views import home
 from user import views as user_views
 
 urlpatterns = [
-    path('adminpanel', home, name='adminpanel'),
+    path('upload', home, name='adminpanel'),
     path('admin/', admin.site.urls),
     path('', user_views.home, name='index'),
     path('blog', user_views.blog, name='blog'),

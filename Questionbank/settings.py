@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'upload',
     'moderator',
     'crispy_forms',
+    'django_filters',
     
 ]
 

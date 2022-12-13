@@ -2,6 +2,16 @@
 {% block title %}Login | {{ block.super }}{% endblock title %}
 
 {% block content %}
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
+    {{ message }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% endfor %}
+{% endif %}
 <section class="blog_section layout_padding">
 
     <div class=" text-center  mt-5 mb-3 ">

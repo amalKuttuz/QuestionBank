@@ -31,11 +31,12 @@
             <tbody>
                 {% for book in k %}
                 <tr>
+
                     <td>{{ book.papername }}</td>
                     <td>{{ book.sem }}</td>
                     <td>{{ book.course }}</td>
                     <td>{{ book.university }}</td>
-                   <td> <a class="btn btn-primary mr-2 mb-3" href="/uploadview-pdf/{{ book.id}}">View</a></td>
+                   <td> <a class="btn btn-primary mr-2 mb-3" href="uploadview-pdf/{{ book.id}}">View</a></td>
 
                     
                 </tr>
