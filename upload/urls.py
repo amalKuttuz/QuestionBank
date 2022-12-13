@@ -1,9 +1,10 @@
 from django.urls import path
 from .import views
 from django.contrib.auth import views as auth_views
-
+from user.views import home
 urlpatterns = [
     path('/', views.home, name='home'),
+    path('home',home, name='index'),
     path('/add', views.add_book, name='add_book'),
     path('/update/<int:pk>',views.modify_book,name="update"),
     path('/delete/<int:pk>/', views.delete_book, name='delete_book'),

@@ -17,6 +17,11 @@ def about(request):
 def blog(request):
     return render(request, 'blog.html')
 
+def download(request):
+    for i in range(10):
+        f={'i':i}
+    return render(request, 'download.html',f)
+
 def register(request):
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)
