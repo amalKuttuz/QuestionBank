@@ -2,15 +2,21 @@
 
 {% block content %}
 <section class="blog_section layout_padding">
- <h2 class="heading_container"> Find your Notes &  Question Papers </h2>
-  <div class="form-group">
+  <div class="container heading_center text-center text-danger  pb-2">
+
+    Find your Notes &  Question Papers 
+     </div>
+  <div class="container border border-dark pt-2 pb-2  text-center">
     <form method='get'>
-      {{myfilter.form}}
+      <label> <b> Filter by: </b> </label> 
+      {{myfilter.form.as_p}}
       <button class="btn btn-primary" type="submit">Search</button>
     </form>
   </div>
   {% if ordered %}
-<table class="table table-striped">
+  <div class="table-responsive">
+
+<table class="table table-hover table-striped">
     <thead>
       <tr>
         <th scope="col">No:</th>
@@ -43,6 +49,7 @@
     {% endfor %}
 
   </table>
+</div>
   {% else %}
   <div class="alert alert-success alert-dismissible fade show mt-2 text-center" role="alert">
     Not found
